@@ -1,0 +1,15 @@
+# 🩸 RedPulse v1.0.2 — Release Notes
+Date: October 16, 2025
+
+✨ New Features:
+- Added automatic updater system
+- Added new CPU performance tracker
+- Improved thread handling for smoother performance
+
+🐞 Fixes:
+- Fixed lag when opening the system monitor
+- Corrected background task freeze on exit
+
+🔒 Notes:
+This version focuses on stability and introduces the base updater module.
+All rights reserved © 2025 Quick Red Tech
