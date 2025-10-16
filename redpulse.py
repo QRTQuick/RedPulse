@@ -14,10 +14,10 @@ import shutil
 # CONFIG
 # -------------------------
 CURRENT_VERSION = "1.0.0"
-UPDATE_URL = "https://raw.githubusercontent.com/QRTQuick/RedPulse/main/version.txt"
-EXE_URL = "https://raw.githubusercontent.com/QRTQuick/RedPulse/main/RedPulse.exe"
-RELEASE_NOTE_URL = "https://raw.githubusercontent.com/QRTQuick/RedPulse/main/release_note.txt"
-CHECK_INTERVAL = 1  # seconds
+UPDATE_URL = "https://raw.githubusercontent.com/QRTQuick/Redpulse-pro-/main/version.txt"
+EXE_URL = "https://raw.githubusercontent.com/QRTQuick/Redpulse-pro-/main/RedPulse.exe"
+RELEASE_NOTE_URL = "https://raw.githubusercontent.com/QRTQuick/Redpulse-pro-/main/release_note.txt"
+CHECK_INTERVAL = 0.5  # seconds
 
 # -------------------------
 # COLORS & STYLES
