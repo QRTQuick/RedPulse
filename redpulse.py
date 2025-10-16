@@ -14,9 +14,9 @@ import shutil
 # CONFIG
 # -------------------------
 CURRENT_VERSION = "1.0.0"
-UPDATE_URL = "https://raw.githubusercontent.com/YourGitHub/RedPulse/version.txt"
-EXE_URL = "https://raw.githubusercontent.com/YourGitHub/RedPulse/RedPulse.exe"
-RELEASE_NOTE_URL = "https://raw.githubusercontent.com/YourGitHub/RedPulse/main/release note"
+UPDATE_URL = "https://raw.githubusercontent.com/QRTQuick/RedPulse/main/version.txt"
+EXE_URL = "https://raw.githubusercontent.com/QRTQuick/RedPulse/main/RedPulse.exe"
+RELEASE_NOTE_URL = "https://raw.githubusercontent.com/QRTQuick/RedPulse/main/release_note.txt"
 CHECK_INTERVAL = 1  # seconds
 
 # -------------------------
