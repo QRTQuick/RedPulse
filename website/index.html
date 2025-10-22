@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================
+       🟥 RedPulse Pro Landing Page
+       Author: Quick Red Tech
+       ========================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RedPulse Pro — Smart Developer Utility Tool by Quick Red Tech. Monitor, manage, and run your system tasks intelligently.">
+  <meta name="keywords" content="RedPulse Pro, Quick Red Tech, developer tool, system monitor, RedMaxima, RedQuota, utility, performance, hacking, tech">
+  <meta name="author" content="Quick Red Tech">
+  <meta property="og:title" content="RedPulse Pro — Quick Red Tech">
+  <meta property="og:description" content="Powerful desktop utility by Quick Red Tech.">
+  <meta property="og:image" content="icon.png">
+  <meta property="og:type" content="website">
+  <title>RedPulse Pro — Quick Red Tech</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ============  CSS  ============ -->
+  <style>
+    :root {
+      --red: #ff2a2a;
+      --black: #000;
+      --silver: #bfbfbf;
+      --gray: #111;
+      --dark-gray: #1a1a1a;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+
+    body {
+      background: radial-gradient(circle at 20% 20%, #111 0%, #000 100%);
+      color: var(--silver);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ========== Animated Background ========= */
+    body::before {
+      content:'';
+      position:fixed;
+      top:0; left:0; width:100%; height:100%;
+      background: repeating-linear-gradient(90deg, rgba(255,0,0,0.05) 0px, transparent 2px, transparent 4px);
+      animation: glitchMove 10s linear infinite;
+      z-index:-2;
+    }
+
+    @keyframes glitchMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-200px); }
+    }
+
+    /* background image overlay */
+    body::after {
+      content:'';
+      position:fixed;
+      top:0; left:0; width:100%; height:100%;
+      background:linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('icon.png') center/contain no-repeat;
+      opacity:0.15;
+      z-index:-3;
+    }
+
+    header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 40px;
+      background:rgba(0,0,0,0.7);
+      border-bottom:1px solid rgba(255,0,0,0.2);
+      position:fixed;
+      width:100%;
+      z-index:1000;
+      backdrop-filter: blur(8px);
+    }
+
+    header .logo {
+      color:var(--red);
+      font-weight:700;
+      font-size:1.6em;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      text-shadow:0 0 15px var(--red);
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { text-shadow:0 0 10px var(--red); }
+      to { text-shadow:0 0 25px var(--red); }
+    }
+
+    header nav a {
+      color:var(--silver);
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    header nav a:hover {
+      color:var(--red);
+      text-shadow:0 0 8px var(--red);
+    }
+
+    .menu-toggle { display:none; flex-direction:column; cursor:pointer; }
+    .bar { height:3px; width:25px; background:var(--silver); margin:4px 0; }
+
+    /* HERO SECTION */
+    .hero {
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:0 20px;
+      background:radial-gradient(circle at center, #111 0%, #000 100%);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before, .hero::after {
+      content:'';
+      position:absolute;
+      top:-50%; left:-50%;
+      width:200%; height:200%;
+      background:conic-gradient(from 0deg, transparent 0%, rgba(255,0,0,0.2) 25%, transparent 50%);
+      animation: rotateBG 12s linear infinite;
+    }
+
+    .hero::after {
+      animation-direction: reverse;
+      opacity:0.4;
+    }
+
+    @keyframes rotateBG {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .hero h1 {
+      font-size:3em;
+      color:var(--red);
+      margin-bottom:15px;
+      text-shadow:0 0 25px rgba(255,0,0,0.6);
+      letter-spacing:1px;
+    }
+
+    .hero p {
+      font-size:1.2em;
+      max-width:650px;
+      color:#ccc;
+      margin-bottom:25px;
+      line-height:1.5em;
+    }
+
+    .hero .btn {
+      background:var(--red);
+      color:#fff;
+      padding:14px 30px;
+      border:none;
+      border-radius:40px;
+      font-size:1em;
+      cursor:pointer;
+      text-transform:uppercase;
+      font-weight:600;
+      letter-spacing:1px;
+      box-shadow:0 0 15px rgba(255,0,0,0.3);
+      transition:all .3s ease;
+    }
+
+    .hero .btn:hover {
+      background:#ff5555;
+      box-shadow:0 0 25px rgba(255,0,0,0.5);
+      transform:scale(1.08);
+    }
+
+    /* FEATURES */
+    section.features {
+      padding:90px 40px;
+      background:var(--dark-gray);
+      text-align:center;
+    }
+
+    section.features h2 {
+      font-size:2.2em;
+      margin-bottom:40px;
+      color:var(--red);
+      text-shadow:0 0 15px rgba(255,0,0,0.4);
+    }
+
+    .feature-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .feature {
+      background:#0d0d0d;
+      padding:30px;
+      border-radius:15px;
+      border:1px solid rgba(255,0,0,0.1);
+      box-shadow:0 0 20px rgba(255,0,0,0.1);
+      transition:transform .3s, box-shadow .3s;
+    }
+
+    .feature:hover {
+      transform:translateY(-5px);
+      box-shadow:0 0 25px rgba(255,0,0,0.4);
+    }
+
+    .feature i {
+      font-size:40px;
+      color:var(--red);
+      margin-bottom:15px;
+      display:block;
+      text-shadow:0 0 10px rgba(255,0,0,0.5);
+    }
+
+    .feature h3 {
+      color:var(--silver);
+      margin-bottom:10px;
+      font-size:1.3em;
+    }
+
+    .feature p { color:#aaa; }
+
+    /* FOOTER */
+    footer {
+      background:#0b0b0b;
+      color:#888;
+      text-align:center;
+      padding:25px;
+      font-size:.9em;
+      border-top:1px solid rgba(255,0,0,0.2);
+    }
+
+    footer a {
+      color:var(--red);
+      text-decoration:none;
+    }
+    footer a:hover { text-decoration:underline; }
+
+    /* RESPONSIVE */
+    @media (max-width:768px) {
+      header nav {
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        right:0;
+        top:70px;
+        background:#111;
+        border-left:2px solid var(--red);
+        width:200px;
+      }
+      header nav.active { display:flex; }
+      .menu-toggle { display:flex; }
+      .hero h1 { font-size:2.2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">RedPulse Pro</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+    <nav id="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#download">Download</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <h1>RedPulse Pro</h1>
+    <p>The intelligent developer utility that keeps your system alive — in pulse mode ⚡<br>Built by <strong>Quick Red Tech</strong>.</p>
+    <button class="btn" onclick="scrollToSection('download')">Download Now</button>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <h2>Features That Define RedPulse Pro</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <i>⚙️</i>
+        <h3>Smart Performance Monitor</h3>
+        <p>Track CPU, memory, and runtime usage in real-time with glowing tech visuals.</p>
+      </div>
+      <div class="feature">
+        <i>🚀</i>
+        <h3>Auto-Updater</h3>
+        <p>Automatically checks GitHub for new releases and installs them securely.</p>
+      </div>
+      <div class="feature">
+        <i>💻</i>
+        <h3>Run Any Executable</h3>
+        <p>Launch Python or EXE files directly while tracking system behavior.</p>
+      </div>
+      <div class="feature">
+        <i>🔴</i>
+        <h3>Built by Quick Red Tech</h3>
+        <p>The Red family continues: RedMaxima, RedQuota, and now — RedPulse Pro.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="features" id="download" style="background:#000;">
+    <h2>Download RedPulse Pro</h2>
+    <p style="color:#ccc; margin-bottom:20px;">Latest version available now for Windows.</p>
+    <a href="https://github.com/QRTQuick/Redpulse-pro-/releases" class="btn">⬇ Get RedPulse Pro</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>© <span id="year"></span> Quick Red Tech | Built with ❤️ by Chisom Life Eke</p>
+    <p><a href="https://qrtquick.github.io/QuickRedTechPortfolio/#projects">View More Projects</a></p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({ behavior:'smooth' });
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
